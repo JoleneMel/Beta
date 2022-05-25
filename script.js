@@ -1,14 +1,17 @@
 "use strict";
-class ModuleTable {
-    constructor() {
-        this.table = document.createElement('table');
-        this.thead = this.table.createTHead();
-        this.tbody = this.table.createTBody();
-        var hrow = this.table.tHead.insertRow(0);
-        var cell = hrow.insertCell(0);
-        cell.innerHTML = "Module ID";
-    }
-}
+// class ModuleTable {
+//     table: HTMLTableElement;
+//     private thead: HTMLTableElement;
+//     private tbody: HTMLTableElement;
+//     constructor() {
+//       this.table = document.createElement('table');
+//       this.thead = <HTMLTableElement> this.table.createTHead();
+//       this.tbody = <HTMLTableElement> this.table.createTBody();
+//       var hrow = <HTMLTableRowElement> this.table.tHead.insertRow(0);
+//       var cell = hrow.insertCell(0);
+//       cell.innerHTML = "Module ID";
+//     }
+//   }
 //this will take in the array which we will refer to as data,
 function buildTable(data) {
     //we will query the table
