@@ -1,4 +1,3 @@
-//http request, and populating the table 
 type userData = {name:string, website:string, email:string, address:any}  
 let userData = [];
 const modal = document.getElementById('userModal')
@@ -12,17 +11,23 @@ const getUser = (id: number) => {
   .then((myJson) => {
     const foundUser = myJson.filter((user: { userId: number; }) => user.userId === id)
     console.log(foundUser)
+    modalContent!.innerHTML = ''
     for(let i = 0; i < foundUser.length; i++) {
       modalContent!.innerHTML += `<p>${foundUser[i].title}</p>`
     }
-    modal!.style.display = "block"
+    modal!.style.display = "flex"
   })
 }
+
 window.onclick = function(event) {
   if (event.target == modal) {
     modal!.style.display = "none";
   }
 }
+
+
+
+//userData
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(function(response) {
   return response.json();
@@ -42,6 +47,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                   </tr>`
                   //grabs variable and set innerhtml
         table!.innerHTML += row
-console.log(userData)
+
     }
+    console.log(userData)
 });
