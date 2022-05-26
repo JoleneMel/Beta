@@ -1,6 +1,6 @@
 
-type userData = {name:string, website:string, email:string, address:string}  
-let userData = '';
+type userData = {name:string, website:string, email:string, address:any}  
+let userData = [];
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(function(response) {
   return response.json();
@@ -8,8 +8,21 @@ fetch('https://jsonplaceholder.typicode.com/users')
 .then(function(myJson) {
 
   userData=myJson
+    //we will query the table
+    var table = document.getElementById('myTable')
+    //while count is less then the length of the array
+    for (var i = 0; i < userData.length; i++){
+        //creating rows with template literals by appending it
+        var row = `<tr>
+                        <td>${userData[i].name}</td>
+                        <td>${userData[i].website}</td>
+                        <td>${userData[i].email}</td>
+                        <td>${userData[i].address}</td>
+                  </tr>`
+                  //grabs variable and set innerhtml
+        table!.innerHTML += row
 console.log(userData)
-
+    }
 });
 
 // class ModuleTable {
