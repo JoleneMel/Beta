@@ -1,21 +1,33 @@
+
+type userData = {name:string, website:string, email:string, address:string}  
+let userData = '';
+fetch('https://jsonplaceholder.typicode.com/users')
+.then(function(response) {
+  return response.json();
+})
+.then(function(myJson) {
+
+  userData=myJson
+console.log(userData)
+
+});
+
 // class ModuleTable {
 //     table: HTMLTableElement;
-//     private thead: HTMLTableElement;
+//     //private thead: HTMLTableElement;
 //     private tbody: HTMLTableElement;
 //     constructor() {
 //       this.table = document.createElement('table');
 //       this.thead = <HTMLTableElement> this.table.createTHead();
 //       this.tbody = <HTMLTableElement> this.table.createTBody();
-//       var hrow = <HTMLTableRowElement> this.table.tHead.insertRow(0);
+//       var hrow = <HTMLTableRowElement> this.table.tHead!.insertRow(0);
 //       var cell = hrow.insertCell(0);
 //       cell.innerHTML = "Module ID";
 //     }
 //   }
 
-
-type userData = {name:string, website:string, email:string, address:string}  
  //this will take in the array which we will refer to as data,
- function buildTable(data:userData[]){
+ const buildTable = (data:userData[]) => {
     //we will query the table
     var table = document.getElementById('myTable')
     //while count is less then the length of the array
