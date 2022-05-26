@@ -1,16 +1,31 @@
 @import 'partials/main';
-body {
-    background-color: pink;
-}
 
 #company_name {
     color: orange;
-    text-align: right;
+    text-align:start;
+    
 }
 
-th {
-    padding: 50px;
-}
+
 #name {
     color: lightseagreen;
+}
+
+table {
+ //display: table-row;
+ display: -moz-grid-line;
+     //flex-flow: column nowrap;
+     flex-flow: column;
+    align-items: center;
+    padding: 0px;
+        width: 100%;
+        justify-content: space-between;
+        //border-radius: 8px;
+        background-color: $white;
+}
+
+.header {
+    display: inline-flexbox;
+    border-bottom: 5px soild black;
+    text-align: start;
 }

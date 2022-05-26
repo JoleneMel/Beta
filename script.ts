@@ -14,10 +14,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
     for (var i = 0; i < userData.length; i++){
         //creating rows with template literals by appending it
         var row = `<tr>
-                        <td id = "name"> ${userData[i].name} </td>
-                        <td> ${userData[i].website} </td>
-                        <td> ${userData[i].email} </td>
-                        <td> ${userData[i].address.street}  ${userData[i].address.suite} ${userData[i].address.city}  ${userData[i].address.zipcode} </td>
+                        <td id = "name">${userData[i].name} </td>
+                        <td>${userData[i].website}</td>
+                        <td>${userData[i].email}</td>
+                        <td>${userData[i].address.street}  ${userData[i].address.suite} ${userData[i].address.city}  ${userData[i].address.zipcode}</td>
                   </tr>`
                   //grabs variable and set innerhtml
         table!.innerHTML += row
