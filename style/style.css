@@ -34,34 +34,67 @@ body section {
 }
 
 #company_name {
-  color: orange;
-  text-align: start;
+  color: #FF6900;
+  padding-top: 15px;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  position: fixed;
+  z-index: 1;
+  left: 1;
+  top: 0;
 }
 
 #name {
-  color: lightseagreen;
+  color: #2485E1;
+}
+
+td, th {
+  text-align: start;
+  width: 80vh;
+  padding: .5rem;
+}
+
+tr:hover {
+  background-color: #ECEEEF;
 }
 
 table {
-  display: -moz-grid-line;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  display: table-cell;
+  border-collapse: collapse;
+  padding: 35px;
+  padding-top: 20px;
+}
+
+th {
+  border-bottom: 2px solid #F5F6F7;
+}
+
+.top:hover {
+  background-color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 33%;
+  top: 10%;
+  padding: 20px;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background-color: white;
+  width: 100%;
+  border: 5px solid black;
+  padding: 25px;
+  height: auto;
+  overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #FFFFFF;
-}
-
-.header {
-  display: inline-flexbox;
-  border-bottom: 5px soild black;
-  text-align: start;
 }
 /*# sourceMappingURL=style.css.map */

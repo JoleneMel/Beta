@@ -1,5 +1,27 @@
 "use strict";
 let userData = [];
+const modal = document.getElementById('userModal');
+const modalContent = document.getElementById('modalContent');
+//function to fetch user todos and filter based on the user of the row clicked
+const getUser = (id) => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then((res) => {
+        return res.json();
+    })
+        .then((myJson) => {
+        const foundUser = myJson.filter((user) => user.userId === id);
+        console.log(foundUser);
+        for (let i = 0; i < foundUser.length; i++) {
+            modalContent.innerHTML += `<p>${foundUser[i].title}</p>`;
+        }
+        modal.style.display = "block";
+    });
+};
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(function (response) {
     return response.json();
@@ -11,7 +33,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
     //while count is less then the length of the array
     for (var i = 0; i < userData.length; i++) {
         //creating rows with template literals by appending it
-        var row = `<tr>
+        var row = `<tr onclick='getUser(${userData[i].id})' >
                         <td id = "name">${userData[i].name} </td>
                         <td>${userData[i].website}</td>
                         <td>${userData[i].email}</td>
