@@ -15,7 +15,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                         <td>${userData[i].name}</td>
                         <td>${userData[i].website}</td>
                         <td>${userData[i].email}</td>
-                        <td>${userData[i].address}</td>
+                        <td>${userData[i].address.street}  ${userData[i].address.suite} ${userData[i].address.city}  ${userData[i].address.zipcode}</td>
                   </tr>`;
         //grabs variable and set innerhtml
         table.innerHTML += row;
